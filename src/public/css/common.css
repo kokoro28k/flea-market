@@ -1,0 +1,109 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* ヘッダー */
+.header {
+    display: grid;
+    align-items: center;
+    padding: 20px;
+    height: 80px;
+    background-color: #000;
+    text-align: center;
+    width: 100%;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.header-logo{
+    grid-column:1;
+}
+
+.search-form{
+    grid-column:2;
+}
+
+.search-form__item{
+    padding: 12px 12px;
+    width: 90%;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 3px;
+}
+
+.header-nav{
+    gap:25px;
+    color:#fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    grid-column:3;
+}
+
+.header-nav__link
+{
+    border: none;
+    outline: none;
+    appearance: none;
+    background: transparent;
+    padding: 0;
+    font-size: 16px;
+    text-decoration: none;
+    color: #FFF;
+        cursor: pointer;
+}
+
+.header-link__primary {
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid #000;
+    background-color: #FFF;
+    text-align: center;
+    color: #000;
+    margin: 0 30px;
+    padding: 5px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header-nav__link:hover,
+.header-nav__link:active,
+.header-nav__link:visited {
+    color: #fff;
+}
+
+/* コンテンツ */
+
+
+.content__heading{
+    font-size:32px ;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ボタン */
+
+.btn {
+    display: block;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background-color:#fe5555;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}

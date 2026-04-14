@@ -1,0 +1,45 @@
+.address-form__inner {
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto 0;
+    max-width: 1200px;
+}
+
+.address-form__form {
+    padding: 30px 10px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.address-form__group {
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.address-form__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.address-form__input {
+    display: block;
+    padding: 8px 12px;
+    width: 100%;
+    height: 48px;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.address-form__error-message {
+    color: red;
+}
+
+.address-form__btn {
+    margin: 40px auto 0;
+    width: 100%;
+    padding: 8px 12px;
+    height: 48px;
+    margin-top: 60px;
+}

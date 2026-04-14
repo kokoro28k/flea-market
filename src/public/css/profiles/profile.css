@@ -1,0 +1,137 @@
+.list-content{
+    width: 100%;
+    padding: 5px 20px;
+    margin-top: 30px;
+    gap:30px;
+}
+
+.profile-header{
+    display: grid;
+    align-items: center;
+    padding: 10px 20px;
+
+    grid-template-columns: repeat(2,1fr);
+}
+
+.profile-info{
+    gap:30px;
+    grid-column: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center ;
+    margin: 0 auto;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color:#d9d9d9;
+    background-size: cover;
+    background-position: center;
+}
+
+.user-name{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profile-edit__link{
+    grid-column: 2;
+    text-decoration: none;
+    border: 3px solid #ff6666;
+    border-radius: 6px;
+    color:#ff6666;
+    padding: 10px 20px;
+    text-align: center;
+    align-items: center;
+    width: 30%;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.list-content__inner{
+    width: 100%;
+        margin: 0 auto;
+        padding-top: 10px;
+}
+
+.subnav {
+    padding: 30px 5px 10px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    gap: 30px;
+    padding: 20px 20px;
+    font-weight: bold;
+}
+
+.subnav__link {
+    text-decoration: none;
+    color: #5f5f5f;
+}
+
+.subnav__link.active {
+    color: red;
+}
+
+.full-width-line {
+    border-bottom: 1px solid #000;
+    margin: 0 0 20px 0;
+    width: 100%;
+}
+
+.items-list__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.items-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.item-card {
+    max-width: 300px;
+}
+
+.item-card__image-wrap {
+    border: none;
+    border-radius: 3px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.item-card__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.item-card__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+
+
+.item-card__name {
+    display: block;
+    color: #000;
+    font-size: 18px;
+}

@@ -1,0 +1,244 @@
+.purchase-container{
+    width: 100%;
+    margin-top: 60px;
+}
+
+.purchase-inner{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 40px 20px;
+}
+
+.purchase-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.item-info__inner{
+    width: 90%;
+    border-bottom: 2px solid #000;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 50px;
+}
+
+.item-card__image-wrap {
+    width: 140px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.item-card__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-info__content{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.item-name{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.item-price{
+    font-size: 24px;
+
+}
+
+.payment-info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.payment-info__inner{
+    width: 90%;
+    border-bottom: 2px solid #000;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.payment-method{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.payment-method__select-inner{
+    border: 1px solid #000;
+    border-radius: 3px;
+    padding: 0;
+    background-color: #fff;
+    gap: 10px;
+    position: relative;
+    width: 50%;
+    z-index: 1;
+    margin-bottom: 60px;
+    margin-left: 80px;
+}
+
+.payment-method__placeholder::-webkit-details-marker {
+    display: none;
+}
+
+.payment-method__placeholder{
+    color: #000;
+    font-size: 14px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.payment-method__inner{
+    background-color: #636769;
+    border: 1px solid #000;
+    border-radius: 3px;
+    display: none;
+    z-index: 10;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    right: -2px;
+    width: 100%;
+}
+
+/*✓の部分*/
+
+
+.payment-method__select-inner[open] .payment-method__inner{
+    display: block;
+}
+
+.payment-method__option{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #fff;
+    padding: 4px 20px;
+    cursor: pointer;
+    transition: background-color .2s, color .2s;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.payment-method__option input[type="radio"] {
+    display: none;
+}
+
+.payment-method__select-inner[open].payment-method__selected,
+.payment-method__select-inner[open].payment-method__arrow{
+    opacity: 0;
+    
+}
+
+.custom-radio {
+    padding-left: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.payment-method__option input[type="radio"]:checked+.custom-radio::before {
+    content: "✓";
+    opacity: 1;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    width: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity .2s;
+}
+
+.payment-method__option input[type="radio"]:checked+.custom-radio{
+    color: #fff;
+    font-weight: bold;
+}
+
+.payment-method__option input[type="radio"]:checked~.custom-radio,
+.payment-method__option input[type="radio"]:checked{
+    background-color: #5599eb;
+    width: 100%;
+    border-radius: 8px;
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+
+.shipping-info__header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.shipping-address{
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 60px;
+}
+
+.shipping-address__body{
+    margin-left: 100px;
+}
+
+.shipping-address__edit-btn{
+    text-decoration: none;
+    font-size: 18px;
+   
+}
+
+.purchase-form__error-message{
+    color: red;
+}
+
+.purchase-summary{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.purchase-detail{
+    border-collapse: collapse;
+        /* ← 表の線を綺麗にする */
+    border: 1px solid #000;
+        /* ← 外枠 */
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.purchase-detail__inner{
+    border: 1px solid #000;
+    text-align: center;
+    width: 80%;
+   
+
+}
+
+.purchase-detail__inner th,
+.purchase-detail__inner td {
+
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+
+.purchase-form__btn{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 0;
+    text-align: center;
+}
