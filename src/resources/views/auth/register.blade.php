@@ -29,14 +29,12 @@
                 <div class="register-form__group">
                     <label class="register-form__label" for="password">パスワード</label>
                     <input class="register-form__input" type="password" name="password" id="password">
-                    @error('password')
-                        <p class="register-form__error-message">{{ $message }}</p>
-                    @enderror
                 </div>
                 <div class="register-form__group">
                     <label class="register-form__label" for="password">確認用パスワード</label>
-                    <input class="register-form__input" type="password" name="password_confirmation" id="password">
-                    @error('password_confirmation')
+                    <input class="register-form__input" type="password" name="password_confirmation"
+                        id="password_confirmation">
+                    @error('password')
                         <p class="register-form__error-message">{{ $message }}</p>
                     @enderror
                 </div>

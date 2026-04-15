@@ -64,8 +64,9 @@
                     @foreach ($item->comments as $comment)
                         <div class="comment-item">
                             @if ($comment->user && $comment->user->image)
-                                <img class="comment-user__icon"
-                                    src="{{ asset('storage/user_images/' . $comment->user->image) }}">
+                                <div class="comment-user__icon"
+                                    style="background-image: url('{{ asset('storage/' . $comment->user->image) }}');">
+                                </div>
                             @else
                                 <div class="comment-user__icon--default"></div>
                             @endif

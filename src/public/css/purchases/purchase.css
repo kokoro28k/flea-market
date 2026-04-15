@@ -42,7 +42,6 @@
 .item-info__content{
     display: flex;
     flex-direction: column;
-
 }
 
 .item-name{
@@ -52,7 +51,6 @@
 
 .item-price{
     font-size: 24px;
-
 }
 
 .payment-info{
@@ -72,6 +70,7 @@
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
+    padding-left: 30px;
 }
 
 .payment-method__select-inner{
@@ -116,8 +115,6 @@
 }
 
 /*✓の部分*/
-
-
 .payment-method__select-inner[open] .payment-method__inner{
     display: block;
 }
@@ -141,7 +138,6 @@
 .payment-method__select-inner[open].payment-method__selected,
 .payment-method__select-inner[open].payment-method__arrow{
     opacity: 0;
-    
 }
 
 .custom-radio {
@@ -177,6 +173,12 @@
     margin-right: -4px;
 }
 
+.shipping-info__inner {
+    width: 90%;
+    border-bottom: 2px solid #000;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
 
 .shipping-info__header{
     display: flex;
@@ -186,7 +188,7 @@
 .shipping-address{
     font-size: 20px;
     font-weight: bold;
-    padding-left: 60px;
+    padding-left: 30px;
 }
 
 .shipping-address__body{
@@ -223,18 +225,13 @@
     border: 1px solid #000;
     text-align: center;
     width: 80%;
-   
-
 }
 
 .purchase-detail__inner th,
 .purchase-detail__inner td {
-
     padding: 40px 20px;
     text-align: center;
 }
-
-
 
 .purchase-form__btn{
     width: 100%;

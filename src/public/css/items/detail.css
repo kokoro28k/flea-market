@@ -132,17 +132,14 @@
     font-size: 16px;
 }
 
-
 .item-detail__comments{
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;  
 }
 
 .comment-item{
     display: flex;
     gap: 12px;
-  
 }
 
 .comment-user__icon {
@@ -151,6 +148,9 @@
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
+    background-position: center;
+    background-color: #d9d9d9;
+    background-size: cover;
 }
 
 .comment-user__icon--default {
