@@ -31,7 +31,7 @@ class ExhibitionRequest extends FormRequest
             'category_id' => 'required|array',
             'category_id.*' => 'integer|exists:categories,id',
             'condition' => 'required',
-            'price' => 'required|integer|min:0',
+            'price' => 'required|integer|min:1',
         ];
     }
 
