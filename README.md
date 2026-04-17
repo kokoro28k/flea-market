@@ -97,6 +97,7 @@ php artisan migrate
 php artisan db:seed
 ```
 
+ユーザーのメールアドレス:test@example.com
 ユーザーのパスワード: 12345678
 
 10. storage:link の実行
@@ -105,14 +106,12 @@ php artisan db:seed
 php artisan storage:link
 ```
 
-11. テスト用データベースの作成
+11. テスト用データベースの作成(初回のみ)
 
 ```
 docker compose exec mysql bash
 mysql -u root -p
 CREATE DATABASE flea_market_test;
-exit
-exit
 ```
 
 12. テスト用DBにマイグレーションを実行
@@ -180,7 +179,7 @@ Laravelがstorage/logsやstorage/framework/viewsに書き込めず、Permission 
 対処方法
 
 ```
-cd /var/www
+docker compose exec php bash
 chown -R www-data:www-data storage bootstrap/cache
 chmod -R 775 storage bootstrap/cache
 ```
