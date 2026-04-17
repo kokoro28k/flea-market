@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EnsureProfileIsCompleted
 {
@@ -20,12 +21,17 @@ class EnsureProfileIsCompleted
             return $next($request);
         }
 
-        if(auth()->check() && !auth()->user()->profile_completed){
-            if(!$request->is('mypage/profile')){
-                return redirect('/mypage/profile');
-            }    
+        if (auth()->check()){
+            if (!auth()->user()->hasVerifiedEmail()){
+                return redirect()->route('verification.notice');
+            }
+        if (!auth()->user()->profile_completed){
+            if (!$request->is('mypage/profile')){
+                return redirect('mypage/profile');
+                }
+            }
         }
 
-        return $next( $request);
+        return $next($request);
     }
 }

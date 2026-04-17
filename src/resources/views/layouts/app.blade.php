@@ -17,8 +17,8 @@
                 <img src="{{ asset('images/COACHTECHヘッダーロゴ.png') }}" alt="COACHTECH">
             </div>
 
-            {{-- ログイン・新規登録ページ以外は検索欄・ナビケーションバーを表示する --}}
-            @unless (request()->routeIs('login') || request()->routeIs('register'))
+            {{-- ログイン・新規登録・メール認証ページ以外は検索欄・ナビケーションバーを表示する --}}
+            @unless (request()->routeIs('login') || request()->routeIs('register') || request()->routeIs('verification.notice'))
                 <form class="search-form" action="/" method="GET">
                     @csrf
                     <input class="search-form__item" type="text" name="keyword" placeholder="なにをお探しですか？"

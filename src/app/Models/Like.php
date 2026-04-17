@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Item;
 
-
 class Like extends Model
 {
     use HasFactory;

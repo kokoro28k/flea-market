@@ -11,7 +11,6 @@ use App\Models\Item;
 use App\Models\User;
 use App\Models\Category;
 
-
 class SellTest extends TestCase
 {
     use RefreshDatabase;

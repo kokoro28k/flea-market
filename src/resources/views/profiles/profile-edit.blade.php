@@ -9,7 +9,8 @@
         <h1 class="profile-form__heading content__heading">プロフィール設定</h1>
 
         <div class="profile-form__inner">
-            <form class="profile-form__form" action="{{ route('profiles.update') }}" method="post" enctype="multipart/form-data">
+            <form class="profile-form__form" action="{{ route('profiles.update') }}" method="post"
+                enctype="multipart/form-data">
                 @csrf
                 <div class="profile-form__header">
                     <div class="profile-form__image"
@@ -37,7 +38,6 @@
                         <p class="profile-form__error-message">{{ $message }}</p>
                     @enderror
                 </div>
-
                 <div class="profile-form__group">
                     <label class="profile-form__label" for="address">住所</label>
                     <input class="profile-form__input" type="text" name="address" id="address"

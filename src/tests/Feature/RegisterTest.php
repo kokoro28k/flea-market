@@ -7,7 +7,6 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Session;
 
-
 class RegisterTest extends TestCase
 {
     use RefreshDatabase;
@@ -90,7 +89,7 @@ class RegisterTest extends TestCase
             'password_confirmation' => 'password',
             ]);
 
-        $response->assertRedirect('/mypage/profile');
+        $response->assertRedirect('/email/verify');
 
         $this->assertDatabaseHas('users',[
             'email' => 'testcase@example.com',

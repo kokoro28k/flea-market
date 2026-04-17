@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProfileRequest;
 
 
-
 class ProfileController extends Controller
 {
     public function edit()
@@ -15,7 +14,6 @@ class ProfileController extends Controller
        $user = Auth::user();
        $address = $user->address;
        
-
     return view('profiles.profile-edit',compact('user','address'));
 
     }

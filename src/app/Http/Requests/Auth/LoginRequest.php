@@ -8,9 +8,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Auth\Events\Lockout;
 
-
-
-
 class LoginRequest extends FormRequest
 {
     /**

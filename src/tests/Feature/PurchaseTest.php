@@ -10,7 +10,6 @@ use App\Models\User;
 use App\Models\Purchase;
 use App\Models\Address;
 
-
 class PurchaseTest extends TestCase
 {
      use RefreshDatabase;
@@ -22,7 +21,9 @@ class PurchaseTest extends TestCase
    public function test_user_can_purchase_item()
     {
         // ユーザーを作成する
-        $user = User::factory()->create();
+        $user = User::factory()->create([
+            'email_verified_at' => now(),
+        ]);
 
         // 出品者は別ユーザー
         $seller = User::factory()->create();
@@ -45,7 +46,7 @@ class PurchaseTest extends TestCase
         // stripe決済
         $response = $this->actingAs($user)->withSession([
             'payment_method' => 'card',
-            'address_id' => 1,
+            'address_id' => $address->id,
         ])->get(route('purchase.success',$item->id));
 
         // 購入後は商品一覧画面に遷移する

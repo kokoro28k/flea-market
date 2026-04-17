@@ -62,7 +62,7 @@ body {
     font-size: 16px;
     text-decoration: none;
     color: #FFF;
-        cursor: pointer;
+    cursor: pointer;
 }
 
 .header-link__primary {
@@ -86,8 +86,6 @@ body {
 }
 
 /* コンテンツ */
-
-
 .content__heading{
     font-size:32px ;
     font-weight: bold;
@@ -95,7 +93,6 @@ body {
 }
 
 /* ボタン */
-
 .btn {
     display: block;
     box-sizing: border-box;

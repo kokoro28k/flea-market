@@ -2,23 +2,15 @@
 
 namespace App\Providers;
 
-use App\Actions\Fortify\CreateNewUser;
-use App\Actions\Fortify\ResetUserPassword;
-use App\Actions\Fortify\UpdateUserPassword;
-use App\Actions\Fortify\UpdateUserProfileInformation;
+
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
-use Illuminate\Support\Facades\Event;
-use Laravel\Fortify\Events\Registered;
 use App\Actions\Fortify\LoginResponse;
-
-
-
-
+use Laravel\Fortify\Contracts\VerifyEmailResponse;
+use Illuminate\Support\Facades\Route;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -38,13 +30,7 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //Fortify::createUsersUsing(CreateNewUser::class);
-
-
-        //Fortify::registerView(function () {
-            //return view('auth.register');
-        //});
-
+        
         Fortify::loginView(function () {
             return view('auth.login');
         });
@@ -55,12 +41,13 @@ class FortifyServiceProvider extends ServiceProvider
             return Limit::perMinute(10)->by($email . $request->ip());
         });
 
-
-        Fortify::redirects('register', '/mypage/profile');
-        Fortify::redirects('login', '/');
-
-        Event::listen(Registered::class, function () {
-        session(['after_register' => true]);
+        $this->app->singleton(VerifyEmailResponse::class,function () {
+            return new class implements VerifyEmailResponse {
+                public function toResponse($request)
+                {
+                    return redirect()->route('profiles.edit');
+                }
+            };
         });
 
     }

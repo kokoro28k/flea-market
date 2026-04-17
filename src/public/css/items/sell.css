@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 20px;
 }
+
 .sell-form{
     width: 100%;
     margin: 0 auto;
@@ -19,7 +20,7 @@
     padding: 30px 10px;
     width: 60%;
     margin: 0 auto;
- }
+}
 
 .sell-form__group {
     margin-bottom: 50px;
@@ -49,7 +50,6 @@
 .sell-form__error-message {
     color: red;
 }
-
 
  .item-image__box{
    border: 1px dashed #000;
@@ -95,7 +95,7 @@ input[type="file"] {
     gap: 20px;
     margin-top: 8px;
     margin-left: 20px;
-   }
+}
 
 /* ボタンの見た目（label） */
 .item-category__btn {
@@ -108,7 +108,7 @@ input[type="file"] {
     display: inline-block;
     transition: 0.2s;
     color: #fe5555;
-    }
+}
 
 /* チェックされたときの見た目 */
 .item-category__checkbox:checked+.item-category__btn {
@@ -251,8 +251,6 @@ input[type="file"] {
     font-weight: bold;
     pointer-events: none;
 }
-
-
 
 .sell-form__input::-webkit-inner-spin-button,
 .sell-form__input::-webkit-outer-spin-button {

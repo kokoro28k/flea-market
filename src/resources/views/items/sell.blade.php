@@ -33,7 +33,6 @@
                                     <input class="item-category__checkbox" type="checkbox" name="category_id[]"
                                         id="category_{{ $category->id }}" value="{{ $category->id }}"
                                         {{ in_array($category->id, old('category_id', [])) ? 'checked' : '' }}>
-
                                     <label class="item-category__btn" for="category_{{ $category->id }}">
                                         {{ $category->name }}
                                     </label>
@@ -95,9 +94,9 @@
                     <div class="sell-form__group">
                         <label class="sell-form__label" for="item-content">商品説明</label>
                         <textarea class="sell-form__content" name="description" id="item-content">{{ old('description') }}</textarea>
-                            @error('description')
-                             <p class="sell-form__error-message">{{ $message }}</p>
-                            @enderror
+                        @error('description')
+                            <p class="sell-form__error-message">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="sell-form__group">
                         <label class="sell-form__label" for="item-price">販売価格</label>
@@ -105,9 +104,9 @@
                             <input class="sell-form__input" type="number" name="price" id="item-price"
                                 value="{{ old('price') }}">
                         </div>
-                            @error('price')
+                        @error('price')
                             <p class="sell-form__error-message">{{ $message }} </p>
-                            @enderror
+                        @enderror
                     </div>
                     <input class="sell-form__btn btn" type="submit" value="出品する">
                 </form>

@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ExhibitionRequest;
 use App\Http\Requests\CommentRequest;
 
-
 class ItemController extends Controller
 {
     public function index(Request $request)
@@ -47,7 +46,6 @@ class ItemController extends Controller
 
             $items = $query->latest()->get();
         }
-
 
         return view('items.list',compact('items','tab'));
     }
@@ -112,8 +110,6 @@ class ItemController extends Controller
 
         return redirect()->route('items.index');  
     }
-
-  
 
     public function commentStore(CommentRequest $request,$item_id)
     {

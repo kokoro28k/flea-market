@@ -9,7 +9,6 @@ use Illuminate\Auth\Events\Registered;
 use App\Actions\Fortify\CreateNewUser;
 use Illuminate\Support\Facades\Auth;
 
-
 class RegisteredUserController extends Controller
 {
     public function store(RegisterRequest $request,CreateNewUser $creator)
@@ -22,6 +21,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect('/mypage/profile');
+        return redirect()->route('verification.notice');
     }
 }

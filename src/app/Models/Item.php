@@ -10,7 +10,6 @@ use App\Models\Like;
 use App\Models\Category;
 use App\Models\User;
 
-
 class Item extends Model
 {
     use HasFactory;
@@ -30,11 +29,9 @@ class Item extends Model
     'status' => 'integer',
     ];
 
-
     public function user(){
         return $this->belongsTo(User::class);
     }
-
 
     public function purchase(){
         return $this -> hasOne(Purchase::class);
