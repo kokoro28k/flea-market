@@ -85,12 +85,6 @@ php artisan key:generate --env=testing
 php artisan config:clear
 ```
 
-- テスト用DBにマイグレーションを実行
-
-```
-php artisan migrate --env=testing
-```
-
 8. マイグレーションの実行
 
 ```
@@ -109,6 +103,22 @@ php artisan db:seed
 
 ```
 php artisan storage:link
+```
+
+11. テスト用データベースの作成
+
+```
+docker compose exec mysql bash
+mysql -u root -p
+CREATE DATABASE flea_market_test;
+exit
+exit
+```
+
+12. テスト用DBにマイグレーションを実行
+
+```
+php artisan migrate --env=testing
 ```
 
 ## トラブルシューティング
