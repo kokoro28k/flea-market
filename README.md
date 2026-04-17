@@ -97,7 +97,7 @@ php artisan migrate
 php artisan db:seed
 ```
 
-ユーザーのメールアドレス:test@example.com
+ユーザーのメールアドレス:test@example.com  
 ユーザーのパスワード: 12345678
 
 10. storage:link の実行
