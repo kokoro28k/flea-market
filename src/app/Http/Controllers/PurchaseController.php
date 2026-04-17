@@ -22,8 +22,12 @@ class PurchaseController extends Controller
         $payment_method = $user->payment_method;
         $address_id = $user->address->id;
 
-        return view('purchases.purchase', ['item'=> $item,'user'=> $user,'payment_method'=> $payment_method,'item_id'=> $item_id,
-        'address_id' => $address_id]);
+        return view('purchases.purchase', [
+            'item'=> $item,
+            'user'=> $user,
+            'payment_method'=> $payment_method,
+            'item_id'=> $item_id,
+            'address_id' => $address_id]);
     }
 
     public function purchase(PurchaseRequest $request, $item_id)
