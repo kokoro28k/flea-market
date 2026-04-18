@@ -107,7 +107,7 @@ php artisan db:seed
   email: test2@example.com  
   password: 12345678
 
-- ユーザー3
+- ユーザー3  
   email: test3@example.com  
   password: 12345678
 
