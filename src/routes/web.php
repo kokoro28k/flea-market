@@ -4,10 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\PurchaseController; 
-use App\Http\Controllers\Auth\CustomAuthenticatedSessionController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MypageController;
-use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,10 +56,10 @@ Route::middleware(['auth','verified','profile.completed'])->group(function () {
     Route::get('/purchase/{item_id}/success',[PurchaseController::class,'success'])->name('purchase.success');
 });
 
-Route::post('/register', [RegisteredUserController::class, 'store'])
+Route::post('/register', [RegisterController::class, 'store'])
     ->middleware(['guest'])
     ->name('register');
 
-Route::post('/login', [CustomAuthenticatedSessionController::class, 'store'])
+Route::post('/login', [LoginController::class, 'store'])
     ->middleware(['guest'])
     ->name('login');

@@ -5,7 +5,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use Laravel\Fortify\Contracts\LoginResponse;
 use Illuminate\Pipeline\Pipeline;
 
-class CustomAuthenticatedSessionController
+class LoginController
 {
   
     public function create()

@@ -1,4 +1,4 @@
-# アプリケーション名
+#
 
 Flea-market(フリマアプリ)
 
@@ -97,8 +97,19 @@ php artisan migrate
 php artisan db:seed
 ```
 
-ユーザーのメールアドレス:test@example.com  
-ユーザーのパスワード: 12345678
+### ログイン用ダミーユーザー
+
+- ユーザー1(出品者)
+  email: test@example.com  
+  password: 12345678
+
+- ユーザー2(出品者)
+  email: test2@example.com  
+  password: 12345678
+
+- ユーザー3
+  email: test3@example.com  
+  password: 12345678
 
 10. storage:link の実行
 
@@ -182,22 +193,6 @@ Laravelがstorage/logsやstorage/framework/viewsに書き込めず、Permission 
 docker compose exec php bash
 chown -R www-data:www-data storage bootstrap/cache
 chmod -R 775 storage bootstrap/cache
-```
-
-### MYSQLコンテナが起動していない(Connection refused)
-
-ユーザー登録やログインなど、DBアクセス時に以下のようなエラーが発生する。
-
-```
-SQLSTATE[HY000] [2002] Connection refused
-```
-
-対処方法
-プロジェクトのルートで以下を実行し、MYSQLコンテナを起動する。
-
-```
-docker compose up -d
-docker ps   # mysql
 ```
 
 ## URL

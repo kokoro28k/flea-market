@@ -9,7 +9,7 @@ use Illuminate\Auth\Events\Registered;
 use App\Actions\Fortify\CreateNewUser;
 use Illuminate\Support\Facades\Auth;
 
-class RegisteredUserController extends Controller
+class RegisterController extends Controller
 {
     public function store(RegisterRequest $request,CreateNewUser $creator)
     {
