@@ -99,11 +99,11 @@ php artisan db:seed
 
 ### ログイン用ダミーユーザー
 
-- ユーザー1(出品者)
+- ユーザー1(出品者)  
   email: test@example.com  
   password: 12345678
 
-- ユーザー2(出品者)
+- ユーザー2(出品者)  
   email: test2@example.com  
   password: 12345678
 
