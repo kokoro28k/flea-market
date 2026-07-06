@@ -16,15 +16,13 @@
                         <label class="sell-form__label">商品画像</label>
                         <div class="item-image__box">
                             <input type="file" name="image_path" id="file-upload" accept="image/jpeg, image/png">
-                            <label class="sell-form__upload" for="file-upload">画像を選択する
-                            </label>
+                            <label class="sell-form__upload" for="file-upload">画像を選択する</label>
                         </div>
                         @error('image_path')
                             <p class="sell-form__error-message">{{ $message }}</p>
                         @enderror
                     </div>
-                    <h2 class="item-detail">商品の詳細
-                    </h2>
+                    <h2 class="item-detail">商品の詳細</h2>
                     <div class="sell-form__group">
                         <label class="sell-form__label" for="item-category">カテゴリー</label>
                         <div class="item-category__wrapper">
@@ -100,7 +98,8 @@
                     </div>
                     <div class="sell-form__group">
                         <label class="sell-form__label" for="item-price">販売価格</label>
-                        <div class="price-input__wrap"> <span class="price-prefix">￥</span>
+                        <div class="price-input__wrap">
+                            <span class="price-prefix">￥</span>
                             <input class="sell-form__input" type="number" name="price" id="item-price"
                                 value="{{ old('price') }}">
                         </div>

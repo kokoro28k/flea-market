@@ -18,8 +18,7 @@
                     <input class="address-form__input" type="text" name="postal_code" id="postal_code"
                         value="{{ old('postal_code') }}">
                     @error('postal_code')
-                        <p class="address-form__error-message">
-                            {{ $message }}</p>
+                        <p class="address-form__error-message">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="address-form__group">
@@ -27,8 +26,7 @@
                     <input class="address-form__input" type="text" name="address" id="address"
                         value="{{ old('address') }}">
                     @error('address')
-                        <p class="address-form__error-message">
-                            {{ $message }}</p>
+                        <p class="address-form__error-message">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="address-form__group">

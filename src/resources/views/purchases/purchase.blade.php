@@ -21,9 +21,7 @@
                 </div>
                 <div class="payment-info">
                     <div class="payment-info__inner">
-                        <p class="payment-method">
-                            支払い方法
-                        </p>
+                        <p class="payment-method">支払い方法</p>
                         <form action="{{ route('purchases.calculate', ['item_id' => $item->id]) }}" method="get">
 
                             <details class="payment-method__select-inner">

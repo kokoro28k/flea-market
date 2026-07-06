@@ -14,13 +14,13 @@
         </div>
 
         <a class="verify-button" href="/email/verify">
-             認証はこちらから
+            認証はこちらから
         </a>
 
-        <form class="verify-form__resend" method="post" action="{{route('verification.send')}}">
+        <form class="verify-form__resend" method="post" action="{{ route('verification.send') }}">
             @csrf
             <button class="verify-resend" type="submit">
-            認証メールを再送する
+                認証メールを再送する
             </button>
         </form>
     </div>

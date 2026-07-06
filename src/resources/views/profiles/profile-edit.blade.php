@@ -16,8 +16,7 @@
                     <div class="profile-form__image"
                         style="background-image: url('{{ asset('storage/' . $user->image) }}');">
                     </div>
-                    <label class="profile-form__upload" for="file-upload">画像を選択する
-                    </label>
+                    <label class="profile-form__upload" for="file-upload">画像を選択する</label>
                     <input id="file-upload" type="file" name="image" accept="image/jpeg, image/png,">
                 </div>
 
@@ -43,7 +42,7 @@
                     <input class="profile-form__input" type="text" name="address" id="address"
                         value="{{ old('address', $address->address ?? '') }}">
                     @error('address')
-                        <p class="profile-form__error-message"> {{ $message }}</p>
+                        <p class="profile-form__error-message">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="profile-form__group">

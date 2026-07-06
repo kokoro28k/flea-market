@@ -54,8 +54,7 @@
                 </div>
                 <div class="item-condition__group">
                     <label class="item-condition">商品の状態</label>
-                    <p class="item-condition__content">
-                        {{ $conditions[$item->condition] }}</p>
+                    <p class="item-condition__content">{{ $conditions[$item->condition] }}</p>
                 </div>
             </div>
             <div class="item-detail__group">
@@ -70,8 +69,7 @@
                             @else
                                 <div class="comment-user__icon--default"></div>
                             @endif
-                            <p class="comment-user__name">{{ optional($comment->user)->name ?? '名無しユーザー' }}
-                            </p>
+                            <p class="comment-user__name">{{ optional($comment->user)->name ?? '名無しユーザー' }}</p>
                         </div>
                         <div class="comment-wrap">
                             <p class="comment-user__text">{{ $comment->comment }}</p>
@@ -85,7 +83,7 @@
 
                 <textarea class="item-comennt__form-content" name="comment">{{ old('comment') }}</textarea>
                 @error('comment')
-                    <p class="comment-form__error-message">{{ $message }} </p>
+                    <p class="comment-form__error-message">{{ $message }}</p>
                 @enderror
                 <input class="comment-form__btn btn" type="submit" value="コメントを送信する">
             </form>
