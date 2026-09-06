@@ -1,8 +1,13 @@
-#
+## Flea-market(フリマアプリ)
 
-Flea-market(フリマアプリ)
+## アプリ概要
 
-## 環境構築
+このアプリは、アイテムの出品、購入ができるフリマアプリです。　　
+商品には「いいね」機能があり、ユーザーは気に入った商品をマイリストで確認できます。　　
+また、商品に対してコメントを投稿できるため、出品者と購入希望者のコミュニケーションが可能です。　　
+さらに、ユーザーは自分が出品した商品一覧と、購入した商品一覧を確認できるようになっています。
+
+# 環境構築
 
 ### Dockerビルド
 
@@ -209,6 +214,102 @@ chmod -R 775 storage bootstrap/cache
 - Docker / docker-compose
 - nginx 1.21.1
 - Stripe API
+
+# テーブル仕様
+
+## usersテーブル　　
+
+| カラム名          | 型           | primary key | unique key | not null | foreign key |
+| ----------------- | ------------ | ----------- | ---------- | -------- | ----------- |
+| id                | bigint       | ○           |            | ○        |             |
+| name              | varchar(255) |             |            | ○        |             |
+| email             | varchar(255) |             | ○          | ○        |             |
+| email_verified_at | timestamp    |             |            |          |             |
+| password          | varchar(255) |             |            | ○        |             |
+| image             | varchar(255) |             |            |          |             |
+| profile_completed | boolean      |             |            | ○        |             |
+| created_at        | timestamp    |             |            |          |             |
+| updated_at        | timestamp    |             |            |          |             |
+
+## itemsテーブル
+
+| カラム名    | 型           | primary key | unique key | not null | foreign key |
+| ----------- | ------------ | ----------- | ---------- | -------- | ----------- |
+| id          | bigint       | ○           |            | ○        |             |
+| user_id     | bigint       |             |            | ○        | users(id)   |
+| name        | varchar(255) |             |            | ○        |             |
+| brand       | varchar(255) |             |            |          |             |
+| description | text         |             |            | ○        |             |
+| condition   | varchar(255) |             |            | ○        |             |
+| price       | integer      |             |            | ○        |             |
+| image_path  | varchar(255) |             |            | ○        |             |
+| status      | tinyInteger  |             |            | ○        |             |
+| created_at  | timestamp    |             |            |          |             |
+| updated_at  | timestamp    |             |            |          |             |
+
+## likesテーブル
+
+| カラム名   | 型        | primary key | unique key | not null | foreign key |
+| ---------- | --------- | ----------- | ---------- | -------- | ----------- |
+| id         | bigint    | ○           |            | ○        |             |
+| user_id    | bigint    |             |            | ○        | users(id)   |
+| item_id    | bigint    |             |            | ○        | items(id)   |
+| created_at | timestamp |             |            |          |             |
+| updated_at | timestamp |             |            |          |             |
+
+## purchasesテーブル
+
+| カラム名       | 型          | primary key | unique key | not null | foreign key   |
+| -------------- | ----------- | ----------- | ---------- | -------- | ------------- |
+| id             | bigint      | ○           |            | ○        |               |
+| user_id        | bigint      |             |            | ○        | users(id)     |
+| item_id        | bigint      |             |            | ○        | items(id)     |
+| address_id     | bigint      |             |            | ○        | addresses(id) |
+| payment_method | tinyInteger |             |            | ○        |               |
+| created_at     | timestamp   |             |            |          |               |
+| updated_at     | timestamp   |             |            |          |               |
+
+## categoriesテーブル
+
+| カラム名   | 型        | primary key | unique key | not null | foreign key |
+| ---------- | --------- | ----------- | ---------- | -------- | ----------- |
+| id         | bigint    | ○           |            | ○        |             |
+| name       | bigint    |             |            | ○        |             |
+| created_at | timestamp |             |            |          |             |
+| updated_at | timestamp |             |            |          |             |
+
+## commentsテーブル
+
+| カラム名   | 型        | primary key | unique key | not null | foreign key |
+| ---------- | --------- | ----------- | ---------- | -------- | ----------- |
+| id         | bigint    | ○           |            | ○        |             |
+| user_id    | bigint    |             |            | ○        | users(id)   |
+| item_id    | bigint    |             |            | ○        | items(id)   |
+| comments   | text      |             |            | ○        |             |
+| created_at | timestamp |             |            |          |             |
+| updated_at | timestamp |             |            |          |             |
+
+## category_itemテーブル　　
+
+| カラム名    | 型        | primary key | unique key | not null | foreign key    |
+| ----------- | --------- | ----------- | ---------- | -------- | -------------- |
+| id          | bigint    | ○           |            | ○        |                |
+| item_id     | bigint    |             |            | ○        | items(id)      |
+| category_id | bigint    |             |            | ○        | categories(id) |
+| created_at  | timestamp |             |            |          |                |
+| updated_at  | timestamp |             |            |          |                |
+
+## addressesテーブル
+
+| カラム名    | 型           | primary key | unique key | not null | foreign key |
+| ----------- | ------------ | ----------- | ---------- | -------- | ----------- |
+| id          | bigint       | ○           |            | ○        |             |
+| user_id     | bigint       |             |            | ○        | users(id)   |
+| postal_code | varchar(8)   |             |            | ○        |             |
+| address     | varchar(255) |             |            | ○        |             |
+| building    | varchar(255) |             |            |          |             |
+| created_at  | timestamp    |             |            |          |             |
+| updated_at  | timestamp    |             |            |          |             |
 
 ## ER図
 
