@@ -21,8 +21,8 @@ class CreateItemsTable extends Migration
             $table->text('description');
             $table->string('condition');
             $table->integer('price');
-            $table->string('image_path');
-            $table->tinyInteger('status'); // 0: 出品中, 1: 売却済み
+            $table->text('image_path');
+            $table->tinyInteger('status')->default(0); // 0: 出品中, 1: 売却済み
             $table->timestamps();
         });
     }
